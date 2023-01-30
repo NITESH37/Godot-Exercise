@@ -1,6 +1,7 @@
 extends Node2D
 
 export (PackedScene) var coin_scene = preload("res://Coin.tscn")
+export (PackedScene) var enemy_scene = preload("res://Enemy.tscn")
 export (int) var playtime = 20
 
 var level : int
@@ -37,7 +38,16 @@ func new_game():
 	$Player.start($PlayerStart.position)
 	$Player.show()
 	$GameTimer.start(playtime)
+	spawn_enemy()
 	spawn_coins()
+
+
+func spawn_enemy():
+	for i in range(4 ):
+		var enemy = enemy_scene.instance()
+		$EnemyContainer.add_child(enemy)
+		enemy.screensize = screensize
+		enemy.position = Vector2(rand_range(0, screensize.x), rand_range(0, screensize.y))
 
 
 func spawn_coins():

@@ -17,6 +17,8 @@ margin_bottom = 720.0
 texture = ExtResource( 2 )
 stretch_mode = 2
 
+[node name="EnemyContainer" type="Node" parent="."]
+
 [node name="CoinContainer" type="Node" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
