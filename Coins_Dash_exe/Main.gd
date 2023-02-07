@@ -48,9 +48,11 @@ func spawn_enemy():
 		$EnemyContainer.add_child(enemy)
 		enemy.screensize = screensize
 		enemy.position = Vector2(rand_range(0, screensize.x), rand_range(0, screensize.y))
+		
 
 
 func spawn_coins():
+	$LevelSound.play()
 	for i in range(4 + level):
 		var coin = coin_scene.instance()
 		$CoinContainer.add_child(coin)
@@ -81,6 +83,7 @@ func _on_GameTimer_timeout():
 
 func _on_Player_pickup():
 	score += 1
+	$CoinSound.play()
 	$HUD.update_score(score)
 
 
@@ -88,6 +91,7 @@ func _on_Player_hurt():
 	game_over()
 
 func game_over():
+	$EndSound.play()
 	playing = false
 	$GameTimer.stop()
 	for coin in $CoinContainer.get_children():
