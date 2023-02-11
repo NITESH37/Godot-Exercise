@@ -21,7 +21,6 @@ tracks/0/keys = {
 
 [node name="Player" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-speed = 2
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 3 )
@@ -30,3 +29,5 @@ region_rect = Rect2( 265, 160, 45, 50 )
 
 [node name="AnimationPlayer" parent="." index="3"]
 anims/RESET = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="4"]

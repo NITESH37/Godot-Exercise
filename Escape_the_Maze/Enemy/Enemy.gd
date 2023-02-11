@@ -9,6 +9,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if can_move:
-		if not move(facing) or randi() % 10 > 5:
+		if not move_tween(facing) or randi() % 10 > 5:
 			facing = moves.keys() [randi() % 4]
 

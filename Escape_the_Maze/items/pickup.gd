@@ -4,10 +4,13 @@ var textures = {'coin': 'res://assets/coin.png', 'key_red': 'res://assets/keyRed
 var type
 
 
-func _init(_type, pos) -> void:
-	$Sprite.texture = load(textures[_type])
-	type = _type
-	position = pos
+#func _init(_type, pos) -> void:
+#	type = _type
+#	position = pos
+
+
+func _ready() -> void:
+	$Sprite.texture = load(textures[type])
 
 
 func pickup():

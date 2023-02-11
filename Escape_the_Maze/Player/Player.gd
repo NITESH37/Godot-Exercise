@@ -21,6 +21,14 @@ func _process(delta: float) -> void:
 #				if move(dir):
 #					emit_signal('moved')
 
+#func _process(delta: float) -> void:
+#	if can_move:
+#		for dir in moves.keys():
+#			if Input.is_action_pressed(dir):
+#				if move_tween(dir):
+#					emit_signal("moved")
+
+
 
 func _on_Player_area_entered(area):
 	if area.is_in_group('enemies'):
