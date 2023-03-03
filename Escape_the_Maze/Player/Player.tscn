@@ -24,7 +24,6 @@ script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 3 )
-frame = 6
 region_rect = Rect2( 265, 160, 45, 50 )
 
 [node name="AnimationPlayer" parent="." index="3"]

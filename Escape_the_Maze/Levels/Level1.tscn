@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=2]
-[ext_resource path="res://Level1.gd" type="Script" id=3]
+[ext_resource path="res://Levels/Level1.gd" type="Script" id=3]
 [ext_resource path="res://items/pickup.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=5]
 
@@ -27,4 +27,4 @@ format = 1
 tile_data = PoolIntArray( 65538, 11, 0, 65547, 11, 0, 65549, 11, 0, 131073, 9, 0, 131077, 9, 0, 131078, 11, 0, 131081, 11, 0, 131084, 9, 0, 131086, 11, 0, 262146, 11, 0, 262150, 9, 0, 262156, 12, 0, 327684, 18, 0, 327691, 19, 0, 327693, 12, 0, 393217, 11, 0, 393220, 3, 0, 458753, 11, 0, 458756, 11, 0, 458763, 11, 0, 458764, 11, 0, 458765, 10, 0, 524289, 11, 0, 524292, 11, 0, 524293, 11, 0, 524294, 11, 0, 524296, 11, 0, 524297, 11, 0, 524298, 11, 0, 524299, 11, 0, 524300, 11, 0, 524301, 11, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 458, 203 )
+position = Vector2( 458, 204 )

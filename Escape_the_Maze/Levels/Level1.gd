@@ -50,13 +50,14 @@ func spawn_items():
 				pickup.type = type
 #				pickup.init(type, pos)
 				add_child(pickup)
+				pickup.connect('coin_pickup', $HUD, 'update_score')
 
 func game_over():
-	pass
+	Global.game_over()
 
 
 func _on_Player_win():
-	pass
+	Global.next_level()
 
 
 func _on_Player_grabbed_key():
