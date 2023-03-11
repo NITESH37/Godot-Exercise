@@ -1,9 +1,14 @@
 extends Area2D
 
+signal score_pink
+signal score_green
+signal score_yellow
+signal score_black
+signal score_red
 
 export (int) var speed = 200
 
-
+var score: int
 var velocity = Vector2()
 var screensize = Vector2(1000,580)
 
@@ -29,10 +34,33 @@ func _process(delta: float) -> void:
 	position.y = clamp(position.y, 0, screensize.y)
 
 
+
+
+
+
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
-#	pass
+
+
+
+func _on_Player_area_entered(area: Area2D) -> void:
+	print("collision")
+	if area.jelly_color == "pink":
+		emit_signal("score_pink")
+		area.queue_free()
+	if area.jelly_color == "green":
+		emit_signal("score_green")
+		area.queue_free()
+	if area.jelly_color == "yellow":
+		emit_signal("score_yellow")
+		area.queue_free()
+	if area.jelly_color == "black":
+		emit_signal("score_black")
+		area.queue_free()
+	if area.jelly_color == "red":
+		emit_signal("score_red")
+		area.queue_free()
