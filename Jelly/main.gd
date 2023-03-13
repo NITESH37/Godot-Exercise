@@ -6,6 +6,9 @@ export(PackedScene) var jelly_scene = preload("res://items/Jellies.tscn")
 var score: int
 var JellyColor: int
 var JellyGround
+var playing = false
+var time_left: int
+export (float) var playtime = 30.0
 onready var screensize: Vector2 = get_viewport().get_visible_rect().size
 
 
@@ -66,12 +69,35 @@ func update_score_red():
 
 
 func _ready() -> void:
-	spawn_goodJelly()
-	spawn_badJelly()
 	$Player.connect("score_pink", self, "update_score_pink")
 	$Player.connect("score_yellow", self, "update_score_yellow")
 	$Player.connect("score_green", self, "update_score_green")
 	$Player.connect("score_black", self, "update_score_black")
 	$Player.connect("score_red", self, "update_score_red")
-	
+	$HUD.connect("start_game", self, "game_start")
+	$Timer.connect("timeout", self, "_on_GameTimer_timeout")
+
+
+func _process(delta: float) -> void:
+	time_left = $Timer.time_left
+	$HUD/Time.text =  str(time_left)
+
+
+func game_start():
+	playing = true
+	score = 0
+	$Player.show()
+	$Timer.start(playtime)
+	spawn_goodJelly()
+	spawn_badJelly()
+
+
+func game_over():
+	playing = false
+	$Timer.stop()
+	$HUD.show_game_over()
+
+
+func _on_GameTimer_timeout(): 
+	game_over()
 

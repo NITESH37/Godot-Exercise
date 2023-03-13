@@ -48,7 +48,6 @@ func _ready() -> void:
 
 
 func _on_Player_area_entered(area: Area2D) -> void:
-	print("collision")
 	if area.jelly_color == "pink":
 		emit_signal("score_pink")
 		area.queue_free()
