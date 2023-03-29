@@ -10,7 +10,7 @@ export (int) var speed = 200
 
 var score: int
 var velocity = Vector2()
-var screensize = Vector2(1000,580)
+var screensize = Vector2(1024,600)
 
 
 func get_input():
@@ -30,8 +30,8 @@ func get_input():
 func _process(delta: float) -> void:
 	get_input()
 	position += velocity * delta
-	position.x = clamp(position.x, 40, screensize.x)
-	position.y = clamp(position.y, 40, screensize.y)
+	position.x = clamp(position.x, 20, screensize.x)
+	position.y = clamp(position.y, 20, screensize.y)
 
 
 

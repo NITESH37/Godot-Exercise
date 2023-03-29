@@ -36,7 +36,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 15, 15 )
+extents = Vector2( 27, 27 )
 
 [node name="Jellies" type="Area2D" groups=["jellies"]]
 script = ExtResource( 6 )
